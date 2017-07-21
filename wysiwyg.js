@@ -49,8 +49,14 @@ for (let i = 0; i < people.length; i++) {
 	peopleFrame.appendChild(newDiv);
 
 	newDiv.addEventListener('click', makeActive);
-	newBio.addEventListener('click', ()=>{
+	newBio.addEventListener('click', function (){
+		let bios = document.getElementsByClassName('bio');
+		for(let i = 0; i < bios.length; i++) {
+			bios[i].removeAttribute('id');
+		}
 		this.id = 'target';
+		input.value = '';
+		console.log("working");
 	});
 }
 
